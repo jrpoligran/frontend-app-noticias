@@ -1,0 +1,22 @@
+.nav-link.active {
+  color: #6d4aff !important;
+  font-weight: 600;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+.btn:focus {
+  box-shadow: none !important;
+}
+
+.contenido p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.sticky-top {
+  z-index: 100;
+}
