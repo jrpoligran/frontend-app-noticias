@@ -8,7 +8,6 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
-  base: '/frontend-app-noticias/',
   build: {
     outDir: 'docs',
   },
