@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "titulo": "Nuevas tecnologías en educación",
+    "categoria": "EDUCACIÓN",
+    "imagen": "https://images.unsplash.com/photo-1509869175650-a1d97972541a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "resumen": "Explora cómo la tecnología está transformando las aulas modernas.",
+    "contenido": "La integración de tecnologías digitales en el sector educativo ha revolucionado la forma en que los estudiantes aprenden. Desde plataformas de aprendizaje en línea hasta realidad virtual, las herramientas educativas evolucionan constantemente para mejorar la experiencia educativa.",
+    "fecha": "2026-08-25"
+  },
+  {
+    "id": 2,
+    "titulo": "Avances en inteligencia artificial",
+    "categoria": "TECNOLOGÍA",
+    "imagen": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "resumen": "Descubre los últimos desarrollos en IA y su impacto global.",
+    "contenido": "La inteligencia artificial continúa avanzando a pasos agigantados. Los modelos de lenguaje, la visión por computadora y los sistemas autónomos están redefiniendo industrias completas, desde la salud hasta la manufactura.",
+    "fecha": "2026-09-26"
+  },
+  {
+    "id": 3,
+    "titulo": "Destinos turísticos emergentes",
+    "categoria": "TURISMO",
+    "imagen": "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "resumen": "Conoce los lugares más populares para visitar este año.",
+    "contenido": "El turismo post-pandemia ha visto un resurgimiento con nuevos destinos ganando popularidad. Desde pueblos costeros escondidos hasta ciudades históricas restauradas, hay opciones para todos los gustos y presupuestos.",
+    "fecha": "2026-07-19"
+  },
+  {
+    "id": 4,
+    "titulo": "Tendencias del mercado comercial",
+    "categoria": "COMERCIO",
+    "imagen": "https://images.unsplash.com/photo-1664455340023-214c33a9d0bd?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "resumen": "Análisis de las últimas tendencias del mercado y comercio electrónico.",
+    "contenido": "El comercio electrónico sigue creciendo a ritmo acelerado. Las empresas adaptan sus estrategias para competir en un mercado digital cada vez más saturado, priorizando la experiencia del cliente y la logística eficiente.",
+    "fecha": "2026-07-28"
+  },
+  {
+    "id": 5,
+    "titulo": "Innovaciones sostenibles",
+    "categoria": "TECNOLOGÍA",
+    "imagen": "https://images.unsplash.com/photo-1613858749733-3a3e456e3d9e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "resumen": "Soluciones tecnológicas para un futuro más verde.",
+    "contenido": "La innovación sostenible es una prioridad global. Desde energías renovables hasta materiales biodegradables, las nuevas tecnologías buscan reducir el impacto ambiental mientras mejoran la calidad de vida.",
+    "fecha": "2026-08-15"
+  }
+]
