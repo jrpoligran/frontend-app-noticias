@@ -5,6 +5,7 @@ function Contacto() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [enviado, establecerEnviado] = useState(false);
 
+  // Simula lo que serìa el envío del formulario (en producción se conectaría a un API)
   const alEnviar = (datos) => {
     console.log('Formulario enviado:', datos);
     establecerEnviado(true);

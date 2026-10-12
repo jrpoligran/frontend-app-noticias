@@ -7,6 +7,7 @@ function Favoritos() {
   const navegar = useNavigate();
   const [favoritos, establecerFavoritos] = useState([]);
 
+  // Carga favoritos desde localStorage y actualiza el estado
   const cargarFavoritos = () => {
     const favoritos = obtenerFavoritos();
     establecerFavoritos(favoritos);

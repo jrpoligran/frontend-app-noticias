@@ -11,6 +11,7 @@ function DetalleNoticia() {
   const noticia = elementosNoticias.find(elemento => elemento.id.toString() === id);
   const [esFav, establecerEsFav] = useState(false);
 
+  // Alterna el estado de favorito: elimina si ya está guardado, agrega si no lo està
   const alternarFavorito = () => {
     if (esFav) {
       eliminarFavorito(noticia.id);

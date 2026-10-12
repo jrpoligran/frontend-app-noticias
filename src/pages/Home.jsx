@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 function Inicio() {
   const { elementosNoticias, cargando } = usarNoticias();
 
+  // Selecciona las primeras 3 noticias para mostrar como destacadas
   const noticiasDestacadas = elementosNoticias.slice(0, 3);
 
   return (

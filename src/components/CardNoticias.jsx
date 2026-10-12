@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 function TarjetaNoticia({ noticia, mostrarBotonFavorito = false }) {
+  // Maneja el clic en favorito solo si el botón está visible y hay función de alternado
   const manejarFavorito = (evento) => {
     evento.preventDefault();
     if (mostrarBotonFavorito && noticia.alAlternarFavorito) {

@@ -12,6 +12,7 @@ function Catalogo() {
 
   const categorias = ['Todos', ...new Set(elementosNoticias.map(elemento => elemento.categoria))];
 
+  // Filtra noticias por categoría seleccionada y término de búsqueda (título o resumen)
   const noticiasFiltradas = useMemo(() => {
     return elementosNoticias.filter(elemento => {
       const coincideCategoria = categoriaSeleccionada === 'Todos' || elemento.categoria === categoriaSeleccionada;

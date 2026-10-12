@@ -26,6 +26,7 @@ export const ProveedorNoticias = ({ children }) => {
   }, []);
 
   return (
+    // Proveedor de contexto con noticias, estado de carga, errores y función para recargar
     <ContextoNoticias.Provider value={{ elementosNoticias, cargando, errorGeneral, recargarNoticias: cargarNoticias }}>
       {children}
     </ContextoNoticias.Provider>

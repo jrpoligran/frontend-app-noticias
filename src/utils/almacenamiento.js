@@ -55,7 +55,6 @@ export const limpiarFavoritos = () => {
 
 export const obtenerDatosNoticias = async () => {
   try {
-
     const respuestaJson = await fetch('/data/noticias.json');
     
     if (!respuestaJson.ok) {
@@ -64,24 +63,35 @@ export const obtenerDatosNoticias = async () => {
     
     const datosJson = await respuestaJson.json();
     
-    // Resto de la función...
     const datosLocalesAlmacenados = localStorage.getItem(CLAVE_NOTICIAS);
-    let cambiosLocales = datosLocalesAlmacenados ? JSON.parse(datosLocalesAlmacenados) : { agregados: [], eliminados: [] };
+    let cambiosLocales = datosLocalesAlmacenados 
+      ? JSON.parse(datosLocalesAlmacenados) 
+      : { agregados: [], eliminados: [] };
     
-    const noticiasCombinadas = [...datosJson];
-    const idsEliminados = cambiosLocales.eliminados || [];
+    // Normaliza la estructura
+    const idsEliminados = new Set(cambiosLocales.eliminados || []);
     const noticiasAgregadas = cambiosLocales.agregados || [];
     
-    const noticiasFiltradas = noticiasCombinadas.filter(noticia => !idsEliminados.includes(noticia.id));
-    noticiasFiltradas.push(...noticiasAgregadas);
+    // Filtra el JSON contra eliminados
+    const noticiasDelJson = datosJson.filter(noticia => !idsEliminados.has(noticia.id));
+  
+    const agregadasActivas = noticiasAgregadas.filter(noticia => !idsEliminados.has(noticia.id));
     
-    return noticiasFiltradas;
+    return [...noticiasDelJson, ...agregadasActivas];
   } catch (error) {
     console.error('Error al obtener datos de noticias:', error);
-    // Respaldo: devolver cualquier elemento creado localmente
+    
+    // El respaldo/backup también respeta los eliminados
     const datosLocalesAlmacenados = localStorage.getItem(CLAVE_NOTICIAS);
-    let cambiosLocales = datosLocalesAlmacenados ? JSON.parse(datosLocalesAlmacenados) : { agregados: [], eliminados: [] };
-    return cambiosLocales.agregados || [];
+    let cambiosLocales = datosLocalesAlmacenados 
+      ? JSON.parse(datosLocalesAlmacenados) 
+      : { agregados: [], eliminados: [] };
+    
+    const idsEliminados = new Set(cambiosLocales.eliminados || []);
+    const agregadasActivas = (cambiosLocales.agregados || []).filter(
+      noticia => !idsEliminados.has(noticia.id)
+    );
+    return agregadasActivas;
   }
 };
 
@@ -90,6 +100,7 @@ export const guardarCreacionNoticia = (noticia) => {
     const datosLocalesAlmacenados = localStorage.getItem(CLAVE_NOTICIAS);
     let cambios = datosLocalesAlmacenados ? JSON.parse(datosLocalesAlmacenados) : { agregados: [], eliminados: [] };
     
+    // Asegura que el array de agregados exista antes de insertar
     if (!cambios.agregados) cambios.agregados = [];
     cambios.agregados.push(noticia);
     localStorage.setItem(CLAVE_NOTICIAS, JSON.stringify(cambios));
@@ -105,6 +116,7 @@ export const guardarEliminacionNoticia = (idNoticia) => {
     const datosLocalesAlmacenados = localStorage.getItem(CLAVE_NOTICIAS);
     let cambios = datosLocalesAlmacenados ? JSON.parse(datosLocalesAlmacenados) : { agregados: [], eliminados: [] };
     
+    // Asegura que el array de eliminados exista y evita duplicados
     if (!cambios.eliminados) cambios.eliminados = [];
     if (!cambios.eliminados.includes(idNoticia)) {
       cambios.eliminados.push(idNoticia);

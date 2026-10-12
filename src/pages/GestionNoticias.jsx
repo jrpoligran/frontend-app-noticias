@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { usarNoticias } from '../contexts/ContextNoticias';
 import { guardarCreacionNoticia, guardarEliminacionNoticia } from '../utils/almacenamiento';
@@ -11,7 +11,7 @@ function GestionNoticias() {
   const alEnviar = async (datos) => {
     establecerCargando(true);
     
-    // Crear nuevo elemento de noticia
+    // Crea nuevo elemento de noticia con ID único basado en timestamp
     const nuevaNoticia = {
       id: Date.now(),
       titulo: datos.titulo,
